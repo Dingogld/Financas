@@ -34,10 +34,16 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             ExpensesDGV = new DataGridView();
+            pictureBox3 = new PictureBox();
+            ExpCatTb = new ComboBox();
+            label5 = new Label();
+            pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ExpensesDGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -87,17 +93,65 @@
             // ExpensesDGV
             // 
             ExpensesDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ExpensesDGV.Location = new Point(21, 71);
+            ExpensesDGV.Location = new Point(21, 103);
             ExpensesDGV.Name = "ExpensesDGV";
-            ExpensesDGV.Size = new Size(636, 609);
+            ExpensesDGV.Size = new Size(636, 577);
             ExpensesDGV.TabIndex = 37;
             ExpensesDGV.CellContentClick += ExpensesDGVFake2_CellContentClick;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(614, 60);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(43, 37);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 38;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
+            // ExpCatTb
+            // 
+            ExpCatTb.Font = new Font("Segoe UI", 12F);
+            ExpCatTb.FormattingEnabled = true;
+            ExpCatTb.Items.AddRange(new object[] { "Food", "Shopping", "Medical", "Household", "Travel", "Vehicle", "Others" });
+            ExpCatTb.Location = new Point(255, 60);
+            ExpCatTb.Name = "ExpCatTb";
+            ExpCatTb.Size = new Size(221, 29);
+            ExpCatTb.TabIndex = 47;
+            ExpCatTb.SelectedIndexChanged += ExpCatTb_SelectedIndexChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.DeepSkyBlue;
+            label5.Location = new Point(116, 64);
+            label5.Name = "label5";
+            label5.Size = new Size(121, 20);
+            label5.TabIndex = 46;
+            label5.Text = "Expense Category";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(482, 57);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(43, 32);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 45;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // AdminExpenses
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(673, 695);
+            Controls.Add(ExpCatTb);
+            Controls.Add(label5);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
             Controls.Add(panel1);
             Controls.Add(ExpensesDGV);
             FormBorderStyle = FormBorderStyle.None;
@@ -109,7 +163,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)ExpensesDGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -119,5 +176,9 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private DataGridView ExpensesDGV;
+        private PictureBox pictureBox3;
+        private ComboBox ExpCatTb;
+        private Label label5;
+        private PictureBox pictureBox4;
     }
 }

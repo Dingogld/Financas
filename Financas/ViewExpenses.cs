@@ -34,6 +34,19 @@ namespace Financas
 
         }
 
+        private void FilterByCat()
+        {
+            Con.Open();
+            string Query = "Select * from ExpenseTbl where ExpUser='" + Login.User + "' and ExCat= '" + ExpCatTb.SelectedItem.ToString() + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(Query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ExpenseDGV.DataSource = ds.Tables[0];
+            Con.Close();
+
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -47,7 +60,22 @@ namespace Financas
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            
+            ShowExp();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewExpenses_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExpCatTb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterByCat();
         }
     }
 }

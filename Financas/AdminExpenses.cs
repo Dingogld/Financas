@@ -17,7 +17,7 @@ namespace Financas
         {
             InitializeComponent();
             ShowExpenses();
-            
+
         }
 
         SqlConnection Con = new SqlConnection("Data Source=W3283439;Initial Catalog=ExpenseOb;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
@@ -25,6 +25,19 @@ namespace Financas
         {
             Con.Open();
             string Query = "Select * from ExpenseTbl";
+            SqlDataAdapter sda = new SqlDataAdapter(Query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ExpensesDGV.DataSource = ds.Tables[0];
+            Con.Close();
+
+        }
+
+        private void FilterByCat()
+        {
+            Con.Open();
+            string Query = "Select * from ExpenseTbl where Excat='" + ExpCatTb.SelectedItem.ToString() + "'";
             SqlDataAdapter sda = new SqlDataAdapter(Query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -43,6 +56,23 @@ namespace Financas
         private void ExpensesDGVFake2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            AdminLogin Obj = new AdminLogin();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            ShowExpenses();
+        }
+
+        private void ExpCatTb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterByCat();
         }
     }
 }

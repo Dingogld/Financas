@@ -35,6 +35,8 @@
             pictureBox1 = new PictureBox();
             ExpenseDGV = new DataGridView();
             pictureBox3 = new PictureBox();
+            ExpCatTb = new ComboBox();
+            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -91,14 +93,14 @@
             ExpenseDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ExpenseDGV.Location = new Point(17, 115);
             ExpenseDGV.Name = "ExpenseDGV";
-            ExpenseDGV.Size = new Size(636, 387);
+            ExpenseDGV.Size = new Size(636, 408);
             ExpenseDGV.TabIndex = 41;
             ExpenseDGV.CellContentClick += ExpenseDGV_CellContentClick;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(615, 64);
+            pictureBox3.Location = new Point(481, 73);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(43, 32);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -106,11 +108,36 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
+            // ExpCatTb
+            // 
+            ExpCatTb.Font = new Font("Segoe UI", 12F);
+            ExpCatTb.FormattingEnabled = true;
+            ExpCatTb.Items.AddRange(new object[] { "Food", "Shopping", "Medical", "Household", "Travel", "Vehicle", "Others" });
+            ExpCatTb.Location = new Point(254, 76);
+            ExpCatTb.Name = "ExpCatTb";
+            ExpCatTb.Size = new Size(221, 29);
+            ExpCatTb.TabIndex = 44;
+            ExpCatTb.SelectedIndexChanged += ExpCatTb_SelectedIndexChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.DeepSkyBlue;
+            label5.Location = new Point(115, 80);
+            label5.Name = "label5";
+            label5.Size = new Size(121, 20);
+            label5.TabIndex = 43;
+            label5.Text = "Expense Category";
+            label5.Click += label5_Click;
+            // 
             // ViewExpenses
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(670, 724);
+            Controls.Add(ExpCatTb);
+            Controls.Add(label5);
             Controls.Add(pictureBox3);
             Controls.Add(ExpenseDGV);
             Controls.Add(panel1);
@@ -118,6 +145,7 @@
             Name = "ViewExpenses";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ViewExpenses";
+            Load += ViewExpenses_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -125,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)ExpenseDGV).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -135,5 +164,7 @@
         private PictureBox pictureBox1;
         private DataGridView ExpenseDGV;
         private PictureBox pictureBox3;
+        private ComboBox ExpCatTb;
+        private Label label5;
     }
 }

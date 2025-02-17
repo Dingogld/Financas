@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            label3 = new Label();
-            pictureBox2 = new PictureBox();
+            PercetageLbl = new Label();
             label1 = new Label();
+            MyProgress = new ProgressBar();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -49,6 +52,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(51, 385);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(5, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(43, 37);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -72,26 +85,16 @@
             label2.TabIndex = 4;
             label2.Text = "Loadig Modules...";
             // 
-            // label3
+            // PercetageLbl
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.DeepSkyBlue;
-            label3.Location = new Point(209, 336);
-            label3.Name = "label3";
-            label3.Size = new Size(22, 23);
-            label3.TabIndex = 5;
-            label3.Text = "%";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(5, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(43, 37);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
+            PercetageLbl.AutoSize = true;
+            PercetageLbl.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PercetageLbl.ForeColor = Color.DeepSkyBlue;
+            PercetageLbl.Location = new Point(209, 336);
+            PercetageLbl.Name = "PercetageLbl";
+            PercetageLbl.Size = new Size(22, 23);
+            PercetageLbl.TabIndex = 5;
+            PercetageLbl.Text = "%";
             // 
             // label1
             // 
@@ -104,14 +107,27 @@
             label1.TabIndex = 6;
             label1.Text = "Expense Management System";
             // 
+            // MyProgress
+            // 
+            MyProgress.Location = new Point(73, 362);
+            MyProgress.Name = "MyProgress";
+            MyProgress.Size = new Size(417, 22);
+            MyProgress.TabIndex = 7;
+            MyProgress.Click += progressBar1_Click;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(524, 385);
+            Controls.Add(MyProgress);
             Controls.Add(label1);
-            Controls.Add(label3);
+            Controls.Add(PercetageLbl);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
@@ -121,9 +137,10 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,8 +150,10 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label2;
-        private Label label3;
+        private Label PercetageLbl;
         private PictureBox pictureBox2;
         private Label label1;
+        private ProgressBar MyProgress;
+        private System.Windows.Forms.Timer timer1;
     }
 }
