@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financas", "Financas\Financas.csproj", "{76ADED7E-CC81-482B-B576-9343F7783F1F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupFinancas", "SetupFinancas\SetupFinancas.vdproj", "{D5B546E2-D059-4ADF-A5C4-6CB3589F1144}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{76ADED7E-CC81-482B-B576-9343F7783F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76ADED7E-CC81-482B-B576-9343F7783F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76ADED7E-CC81-482B-B576-9343F7783F1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5B546E2-D059-4ADF-A5C4-6CB3589F1144}.Debug|Any CPU.ActiveCfg = Debug
+		{D5B546E2-D059-4ADF-A5C4-6CB3589F1144}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

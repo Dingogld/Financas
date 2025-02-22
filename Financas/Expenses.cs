@@ -61,9 +61,14 @@ namespace Financas
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Expense Added");
                 Con.Close();
-                
+
                 Clear();
             }
+        }
+
+        private void ExpCatTb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -168,11 +168,12 @@
             // 
             ExpCatTb.Font = new Font("Segoe UI", 12F);
             ExpCatTb.FormattingEnabled = true;
-            ExpCatTb.Items.AddRange(new object[] { "Food", "Shopping", "Medical", "Household", "Travel", "Vehicle", "Others" });
+            ExpCatTb.Items.AddRange(new object[] { "Food", "Shopping", "Medical", "House", "Travel", "Gasoline", "Vehicle", "Phone", "Others" });
             ExpCatTb.Location = new Point(86, 329);
             ExpCatTb.Name = "ExpCatTb";
             ExpCatTb.Size = new Size(221, 29);
             ExpCatTb.TabIndex = 19;
+            ExpCatTb.SelectedIndexChanged += ExpCatTb_SelectedIndexChanged;
             // 
             // label6
             // 
